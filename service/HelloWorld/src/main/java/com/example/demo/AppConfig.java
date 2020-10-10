@@ -10,6 +10,5 @@ public class AppConfig {
 	
 	public String hello() {
 		return "hello world";
-		// push
 	}
 }
