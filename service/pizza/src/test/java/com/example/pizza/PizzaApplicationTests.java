@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.example.pizza;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HelloWorldApplicationTests {
+class PizzaApplicationTests {
 
 	@Test
 	void contextLoads() {
