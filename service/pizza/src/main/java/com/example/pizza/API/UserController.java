@@ -23,17 +23,17 @@ public class UserController {
     @Autowired
 	UserService userService;
 
-	@PostMapping("/create")
-	public String saveUser(@RequestBody User user, HttpServletRequest request) {
+	@PostMapping(value = "/create", consumes = "application/json", produces = "application/json")
+	public User saveUser(@RequestBody User user, HttpServletRequest request) {
 		try {
 			// save to MongoDB database
 			User _user = userService.saveUser(user);
 			
-			String message = "Upload Successfully a User to MongoDB with id = " + _user.getId();
-			return message;	
+			//String message = "Upload Successfully a User to MongoDB with id = " + _user.getId();
+			return _user;	
 		}catch(Exception e) {
-			String message = "Can NOT upload  a User to MongoDB database";
-			return message;
+			//String message = "Can NOT upload  a User to MongoDB database";
+			return null;
 		}
     }
     
