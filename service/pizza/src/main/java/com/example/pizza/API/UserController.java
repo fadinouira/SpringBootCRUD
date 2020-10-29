@@ -40,19 +40,19 @@ public class UserController {
 		}
 	}*/
 	
-	@PostMapping(value = "/create")
-public ResponseEntity<String> createUser(User user) 
-{
-    //TODO: Save employee details which will generate the employee id
-    User _user = userService.saveUser(user);
-     
-    //Build URI
-     URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                         .path("/{id}")
-                         .buildAndExpand(_user.getId())
-                         .toUri();
-    return ResponseEntity.created(location).build();
-}
+		@PostMapping(value = "/create")
+	public ResponseEntity<String> createUser(User user,HttpServletRequest request) 
+	{
+		//TODO: Save employee details which will generate the employee id
+		User _user = userService.saveUser(user);
+		
+		//Build URI
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+							.path("/{id}")
+							.buildAndExpand(_user.getId())
+							.toUri();
+		return ResponseEntity.created(location).build();
+	}
     
     
 	
